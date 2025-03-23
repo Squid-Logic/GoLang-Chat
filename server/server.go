@@ -4,6 +4,7 @@ import (
     "fmt"
     "log"
     "net/http"
+    "os"
     "github.com/gorilla/websocket"
     "sync"
 )
@@ -81,12 +82,18 @@ func handleClientConnection(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+    // Get the port from the environment variable, if set
+    port := os.Getenv("PORT")
+    if port == "" {
+        // Default to 8080 if no environment variable is set
+        port = ":8080"
+    }
+
     // Handle incoming HTTP requests and upgrade them to WebSocket connections
     http.HandleFunc("/", handleClientConnection)
 
-    // Listen on the port Render assigns (it will set the correct port in an environment variable)
-    port := ":8080" // Default for Render's Web Services
-    log.Println("Server started on", port)
+    // Listen on the port Render assigns or 8080 if not set
+    log.Printf("Server started on %s\n", port)
     log.Fatal(http.ListenAndServe(port, nil))
 }
 
