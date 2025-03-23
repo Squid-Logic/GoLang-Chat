@@ -87,6 +87,9 @@ func main() {
     if port == "" {
         // Default to 8080 if no environment variable is set
         port = ":8080"
+    } else {
+        // If PORT is set, make sure it has the ":" at the beginning (e.g., ":10000")
+        port = ":" + port
     }
 
     // Handle incoming HTTP requests and upgrade them to WebSocket connections
