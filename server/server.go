@@ -84,8 +84,9 @@ func main() {
 	// Handle incoming HTTP requests and upgrade them to WebSocket connections
 	http.HandleFunc("/", handleClientConnection)
 
-	// Start the server and listen on port 8080
-	log.Println("Server started on :8080")
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	// Use HTTPS when hosted on Render
+	log.Println("Server started on https://golang-chat.onrender.com")
+	// Start the server and listen on port 443 (default HTTPS port)
+	log.Fatal(http.ListenAndServeTLS(":443", "server.crt", "server.key", nil)) // Need SSL certificate for HTTPS
 }
 
