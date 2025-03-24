@@ -40,7 +40,7 @@ This project provides a simple way to send and receive messages directly from yo
 1. **Clone the Repository**:
    
    ```sh
-   git clone https://github.com/yourusername/your-project.git
+   git clone https://github.com/Squid-Logic/myNvimInit
    cd your-project
    ```
 
