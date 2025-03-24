@@ -46,7 +46,7 @@ This project provides a simple way to send and receive messages directly from yo
 
 2. **Build the Server**:
    
-   Ensure you have Go installed (installation instructions). Then, build the server:
+   Ensure you have Go installed. Then, build the server:
    
    ```sh
    go build -o server ./server
@@ -60,7 +60,7 @@ This project provides a simple way to send and receive messages directly from yo
    ./server
    ```
    
-   The server listens on a specified port (default configuration) for WebSocket connections.
+   The server listens on a specified port for WebSocket connections.
 
 ### Client Setup
 
