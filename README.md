@@ -41,7 +41,7 @@ This project provides a simple way to send and receive messages directly from yo
    
    ```sh
    git clone https://github.com/Squid-Logic/GoLang-Chat
-   cd your-project
+   cd GoLang-Chat 
    ```
 
 2. **Build the Server**:
